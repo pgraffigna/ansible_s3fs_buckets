@@ -1,0 +1,7 @@
+---
+- hosts: buckets
+  gather_facts: false
+  become: true
+
+  roles:
+    - s3

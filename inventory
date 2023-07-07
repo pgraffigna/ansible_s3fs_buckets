@@ -1,0 +1,6 @@
+[buckets]
+192.168.121.237
+
+[buckets:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=/home/pgraffigna/.vagrant.d/insecure_private_key

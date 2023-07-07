@@ -1,0 +1,14 @@
+---
+# s3
+s3fs_creds: passwd-s3fs
+s3fs_mount_point: s3-bucket
+s3fs_bucket: bucket-15
+s3_host_url: https://s3.host.com.ar/
+access_key: access_key
+secret_key: secret_key
+
+# linux
+fstab_path: /etc/fstab
+# uid: 1000
+# gid: 1000
+# umask: "022"

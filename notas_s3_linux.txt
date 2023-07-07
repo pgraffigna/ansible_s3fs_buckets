@@ -1,0 +1,27 @@
+# s3cmd config file
+[default]
+access_key = access_key
+secret_key = secret_key
+enable_multipart = True
+multipart_chunk_size_mb = 15
+use_https = True
+host_base = s3.host.com.ar
+host_bucket = s3.host.com.ar
+
+# windows
+sudo apt install -y s3cmd
+
+# linux 
+sudo apt update && sudo apt install -y s3fs
+
+# creando archivo con creds
+echo "access_key:secret_key" | sudo tee -a /etc/passwd-s3fs && sudo chmod 600 /etc/passwd-s3fs
+
+# creando carpeta para el bucket
+sudo mkdir /mnt/s3-test
+
+# montando el bucket
+s3fs bucket-15 /mnt/s3-test -o passwd_file=/etc/passwd-s3fs -o url=https://s3.host.com.ar/ -o use_path_request_style 
+
+# persistencia fstab
+bucket-15 /mnt/s3-test fuse.s3fs _netdev,allow_other,use_path_request_style,passwd_file=/etc/passwd-s3fs,url=https://s3.host.com.ar/ 0 0
