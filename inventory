@@ -1,5 +1,5 @@
 [buckets]
-192.168.121.237
+192.168.121.145
 
 [buckets:vars]
 ansible_user=vagrant

@@ -11,7 +11,7 @@ use_https = True
 host_base = s3.host.com.ar
 host_bucket = s3.host.com.ar
 
-# linux 
+# linux
 sudo apt update && sudo apt install -y s3fs
 
 # creando archivo con creds
