@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     s.vm.hostname = HOSTNAME
 
     s.vm.provider :libvirt do |v|
-      v.memory = 2048
+      v.memory = 1024
       v.cpus = 2
     end
   end
