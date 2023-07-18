@@ -1,0 +1,20 @@
+---
+- name: Incluye el archivo con las variables
+  ansible.builtin.include_vars:
+    file: vars_main.yml
+
+- name: Instalar s3cmd
+  ansible.builtin.package:
+    name: "{{ item }}"
+    update_cache: true
+    cache_valid_time: 3600
+  with_items: "{{ s3cmd_packages }}"
+
+- name: Crear archivo con credenciales para "{{ s3fs_bucket }}"
+  ansible.builtin.template:
+    src: "files/{{ s3cmd_creds }}.j2"
+    dest: "/etc/{{ s3cmd_creds }}-{{ s3fs_bucket }}"
+    mode: 0644
+
+
+

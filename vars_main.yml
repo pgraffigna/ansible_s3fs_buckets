@@ -1,11 +1,15 @@
 ---
+# s3cmd
+s3cmd_creds: s3cfg
+s3cmd_host: host
+
 # s3
 s3fs_creds: passwd-s3fs
-s3fs_bucket: bucket-15
+s3fs_bucket: min-cult-bucket-15
 s3fs_mount_point: /mnt/cultura
-s3_host_url: https://s3.hosts.com.ar/
-access_key: access_key
-secret_key: secret_key
+s3_host_url: https://s3.host.com.ar/
+access_key: XXXXXXXXX
+secret_key: XXXXXXXXX
 s3fs_mount_options:
   - "uid={{ uid }}"
   - "gid={{ gid }}"
@@ -20,3 +24,4 @@ fstab_path: /etc/fstab
 uid: 1000
 gid: 1000
 umask: "027"
+
