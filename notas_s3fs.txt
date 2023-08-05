@@ -1,0 +1,14 @@
+# linux
+sudo apt update && sudo apt install -y s3fs
+
+# creando archivo con creds
+echo "access_key:secret_key" | sudo tee -a /etc/passwd-s3fs && sudo chmod 600 /etc/passwd-s3fs
+
+# creando carpeta para el bucket
+sudo mkdir /mnt/s3-test
+
+# montando el bucket
+s3fs bucket-15 /mnt/s3-test -o allow_other,uid=$(id -u www-data),gid=$(id -g www-data),umask=0022,passwd_file=/etc/passwd-s3fs,url=https://s3.host.com,use_path_request_style
+
+# persistencia fstab
+bucket-15 /mnt/s3-test fuse.s3fs _netdev,allow_other,uid=UID,gid=GID,umask=0022,use_path_request_style,passwd_file=/etc/passwd-s3fs,url=https://s3.host.com/ 0 0

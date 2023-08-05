@@ -1,0 +1,11 @@
+# descargar s3cmd
+wget -q https://github.com/s3tools/s3cmd/releases/download/v2.3.0/s3cmd-2.3.0.zip
+
+# descomprimo zip
+unzip s3cmd.zip && cd s3cmd-2.3.0
+
+# instalando dependencias para python
+sudo apt update && sudo apt install -y python3-setuptools
+
+# instalando s3cmd via python
+sudo python3 setup.py install

@@ -5,8 +5,8 @@ s3cmd_host: host
 
 # s3
 s3fs_creds: passwd-s3fs
-s3fs_bucket: min-cult-bucket-15
-s3fs_mount_point: /mnt/cultura
+s3fs_bucket: bucket-15
+s3fs_mount_point: /mnt/buckets
 s3_host_url: https://s3.host.com.ar/
 access_key: XXXXXXXXX
 secret_key: XXXXXXXXX
