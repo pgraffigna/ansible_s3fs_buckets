@@ -9,7 +9,7 @@ make
 sudo make install
 
 # montando bucket
-s3fs min-cult-bucket-15 bucket_test/ \ 
--o allow_other,uid=$(id -u vagrant),gid=$(id -g vagrant),umask=0022,passwd_file=/home/vagrant/passwd-s3fs,url=https://s3.arsat.com.ar/,use_path_request_style \
+s3fs bucket-15 bucket_test/ \ 
+-o allow_other,uid=$(id -u vagrant),gid=$(id -g vagrant),umask=0022,passwd_file=/home/vagrant/passwd-s3fs,url=https://s3.host.com/,use_path_request_style \
 -o max_background=1000,max_stat_cache_size=100000,parallel_count=30,multireq_max=30,cipher_suites=AESGCM,dbglevel=warn
 
