@@ -2,10 +2,10 @@
 access_key = {{ access_key }}
 secret_key = {{ secret_key }}
 enable_multipart = True
-multipart_chunk_size_mb = 50
+multipart_chunk_size_mb = 250
 use_https = True
-host_base = {{ s3_host_url }}
-host_bucket = {{ s3_host_url }}
+host_base = s3.{{ s3cmd_host }}.com.ar
+host_bucket = s3.{{ s3cmd_host }}.com.ar
 cloudfront_host = cloudfront.{{ s3cmd_host }}.com.ar
 simpledb_host = sdb.{{ s3cmd_host }}.com.ar
 website_endpoint = http://%(bucket)s.s3-website-%(location)s.{{ s3cmd_host }}.com.ar/

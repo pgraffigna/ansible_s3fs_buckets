@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     s.vm.provider :libvirt do |v|
       v.memory = 1024
       v.cpus = 2
+      v.graphics_type = "none"
     end
   end
 end

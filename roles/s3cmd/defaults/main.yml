@@ -1,2 +1,2 @@
 ---
-s3cmd_packages: s3cmd
+s3cmd_packages: python3-setuptools

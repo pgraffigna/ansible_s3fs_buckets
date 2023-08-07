@@ -1,15 +1,17 @@
 ---
 # s3cmd
 s3cmd_creds: s3cfg
-s3cmd_host: host
+s3cmd_host: arsat
+s3cmd_version: "2.3.0"
+s3cmd_url: "https://github.com/s3tools/s3cmd/releases/download/v{{ s3cmd_version }}/s3cmd-{{ s3cmd_version }}.zip"
 
 # s3
 s3fs_creds: passwd-s3fs
-s3fs_bucket: bucket-15
+s3fs_bucket: bucket
 s3fs_mount_point: /mnt/buckets
-s3_host_url: https://s3.host.com.ar/
-access_key: XXXXXXXXX
-secret_key: XXXXXXXXX
+s3_host_url: "https://s3.{{ s3cmd_host }}.com.ar/"
+access_key: XXXXXXXXXXXXXX
+secret_key: XXXXXXXXXXXXXX
 s3fs_mount_options:
   - "uid={{ uid }}"
   - "gid={{ gid }}"
