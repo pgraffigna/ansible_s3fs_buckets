@@ -1,29 +1,37 @@
 ---
-# s3cmd
-s3cmd_creds: s3cfg
-s3cmd_host: arsat
-s3cmd_version: "2.3.0"
-s3cmd_url: "https://github.com/s3tools/s3cmd/releases/download/v{{ s3cmd_version }}/s3cmd-{{ s3cmd_version }}.zip"
-
-# s3
-s3fs_creds: passwd-s3fs
-s3fs_bucket: bucket
-s3fs_mount_point: /mnt/buckets
-s3_host_url: "https://s3.{{ s3cmd_host }}.com.ar/"
-access_key: XXXXXXXXXXXXXX
-secret_key: XXXXXXXXXXXXXX
-s3fs_mount_options:
-  - "uid={{ uid }}"
-  - "gid={{ gid }}"
-  - "umask={{ umask }}"
-  - "allow_other"
-  - "passwd_file=/etc/{{ s3fs_creds }}"
-  - "use_path_request_style"
-  - "url={{ s3_host_url }}"
-
 # linux
 fstab_path: /etc/fstab
 uid: 1000
 gid: 1000
-umask: "027"
+umask: "007"
+
+# s3cmd
+s3cmd_creds: s3cfg
+s3cmd_host: HOST
+s3cmd_version: "2.3.0"
+s3cmd_url: "https://github.com/s3tools/s3cmd/releases/download/v{{ s3cmd_version }}/s3cmd-{{ s3cmd_version }}.zip"
+
+# s3fs
+s3fs_creds: passwd-s3fs
+s3fs_bucket: NOMBRE_BUCKET 
+s3fs_mount_point: "/mnt/{{ s3fs_bucket }}"
+s3_host_url: "https://s3.{{ s3cmd_host }}.com.ar/"
+s3_access_key: ACCESS_KEY
+s3_secret_key: SECRET_KEY
+s3fs_mount_options:
+  # - "uid={{ uid }}"
+  # - "gid={{ gid }}"
+  # - "umask={{ umask }}"
+  - "allow_other"
+  - "passwd_file=/etc/{{ s3fs_creds }}"
+  - "use_path_request_style"
+  - "url={{ s3_host_url }}"
+  - "max_background=1000"
+  - "max_stat_cache_size=100000"
+  - "parallel_count=30" 
+  - "multireq_max=30" 
+  - "cipher_suites=AESGCM"
+  - "dbglevel=warn"
+
+
 

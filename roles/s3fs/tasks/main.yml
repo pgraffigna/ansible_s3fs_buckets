@@ -35,4 +35,4 @@
   ansible.builtin.lineinfile:
     path: "{{ fstab_path }}"
     backup: true
-    line: "{{ s3fs_bucket }} {{ s3fs_mount_point }} fuse.s3fs _netdev,allow_other,uid={{ uid }},gid={{ gid }},umask={{ umask }},use_path_request_style,passwd_file=/etc/{{ s3fs_creds }},url={{ s3_host_url }} 0 0"
+    line: "{{ s3fs_bucket }} {{ s3fs_mount_point }} fuse.s3fs _netdev,allow_other,use_path_request_style,passwd_file=/etc/{{ s3fs_creds }},url={{ s3_host_url }} 0 0"

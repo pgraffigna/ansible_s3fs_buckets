@@ -7,5 +7,5 @@ Testeado con qemu + ubuntu 20.04 + ansible_2.10
 ----
 
 roles:
-- s3
+- s3fs
 - s3cmd
