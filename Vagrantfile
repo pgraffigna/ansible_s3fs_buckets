@@ -1,6 +1,6 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
-IMAGEN = "generic/ubuntu2004"
-HOSTNAME = "s3-testing"
+IMAGEN = "generic/ubuntu2204"
+HOSTNAME = "s3.home.local"
 
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
@@ -12,8 +12,9 @@ Vagrant.configure("2") do |config|
 
     s.vm.provider :libvirt do |v|
       v.memory = 1024
+      v.disk_bus = 'virtio'
       v.cpus = 2
-      v.graphics_type = "none"
+      v.graphics_type = 'none'
     end
   end
 end
